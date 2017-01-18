@@ -3,5 +3,5 @@
  */
 module.exports = {
     sessionSecret: 'mSecret',
-    db: 'mongodb://localhost/impsys'
+    db: 'mongodb://localhost/treino_impsys'
 };
