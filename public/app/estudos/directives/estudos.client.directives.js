@@ -46,4 +46,9 @@ angular.module('estudos')
         return {
             templateUrl: 'app/estudos/views/partials_pratica/part-box-estudo.html'
         }
+    })
+    .directive('partMyModal', function () {
+        return {
+            templateUrl: 'app/estudos/views/partials_pratica/part-my-modal.html'
+        }
     });
