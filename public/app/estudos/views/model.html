@@ -1,5 +1,95 @@
 <section data-ng-controller="EstudosController" data-ng-init="loadData()">
-    
+    <div class="row">
+        <div class="col-xs-12">
+            <barra-btns></barra-btns>
+        </div>
+    </div> <!-- Botão Add Produto -->
+    <div class="row">
+        <div class="col-xs-9">
+            <div class="ibox collapsed float-e-margins">
+                <div class="ibox-title">
+                    <h5>Configurações</h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <part-config></part-config>
+                </div>
+            </div> <!-- Configurações -->
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Tabela de Produtos <small class="text-danger"> {{ auxTestes }}</small></h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <div class="project-list">
+                        <part-tabela-produtos></part-tabela-produtos>
+                    </div>
+                </div>
+            </div> <!-- Tabela de Produtos do Estudo -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-success pull-right">BRL</span>
+                            <h5>Lucro</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <part-ibox-lucro></part-ibox-lucro>
+                        </div>
+                    </div>
+                </div> <!-- Lucro -->
+                <div class="col-lg-3">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <part-ibox-cntr></part-ibox-cntr>
+                        </div>
+                    </div>
+                </div> <!-- Contêiner -->
+                <div class="col-lg-5">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">paypal x oficial</span>
+                            <h5>Comparação</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <part-ibox-comparacao></part-ibox-comparacao>
+                        </div>
+                    </div>
+                </div> <!-- Visitas -->
+            </div> <!-- Widgets do Estudo -->
+        </div> <!-- Tabela com Produtos do Estudo -->
+        <div class="col-xs-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Resultados</h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <part-tabela-resultados></part-tabela-resultados>
+                </div>
+            </div>
+            <div class="col">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <!--<span class="label label-warning pull-right">Internacionais</span>-->
+                        <h5>Despesas Compartilhadas <i ng-click="addDespesaInternacionalCompartilhadaModal()" style="margin-left: 100px; cursor: pointer; font-size: .9em;" class="fa fa-plus"></i></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <part-ibox-despesas></part-ibox-despesas>
+                    </div>
+                </div>
+            </div> <!-- User Activity -->
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Dados do Estudo</h5>
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <part-ibox-estudo></part-ibox-estudo>
+                </div>
+            </div>
+        </div> <!-- Dados do Estudo -->
+    </div>
     <part-my-modal></part-my-modal>
     <div ng-include="'app/estudos/views/partials/right-sidebar-estudos.partial.view.html'"></div>
 </section>
