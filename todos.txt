@@ -1,0 +1,5 @@
+1) Treino Bootstrap.
+2) Arquivos
+    a) main-estudos.client.view.html
+        1) botões do topo: incluir classe: btn_pos
+        2) row > col-xs-12 | h2 + button

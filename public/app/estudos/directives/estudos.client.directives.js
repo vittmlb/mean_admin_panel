@@ -1,19 +1,8 @@
 /**
  * Created by Vittorio on 06/06/2016.
  */
-// angular.module('estudos').directive('focus', function ($timeout) {
-//     return {
-//         scope: {
-//             trigger: '@focus'
-//         },
-//         link: function (scope, element) {
-//             scope.$watch('trigger', function (value) {
-//                 if (value === true) {
-//                     $timeout(function () {
-//                         element[0].focus();
-//                     });
-//                 }
-//             });
-//         }
-//     };
-// });
+angular.module('estudos', []).directive('barraBtns', function () {
+    return {
+        templateUrl: 'app/estudos/views/partials_pratica/part-btns.html'
+    }
+});
