@@ -1,0 +1,66 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th data-toggle="true">Produto</th>
+        <th style="text-align: center;">Custo</th>
+        <th style="text-align: center;">C.Paypal</th>
+        <th style="text-align: center;">C.Dentro</th>
+        <th style="text-align: center;">Qtd</th>
+        <th style="text-align: center;">C.Final</th>
+        <th style="text-align: center;">P.Venda</th>
+        <th style="text-align: center;">Opções</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-ng-repeat="itemEstudo in produtosDoEstudo">
+        <!--<td class="project-people pull-left">-->
+        <!--<a href=""><img alt="image" class="img-circle" ng-src="{{ itemEstudo.img_url }}"></a>-->
+        <!--</td>-->
+        <td class="project-title">
+            <i class="fa fa-plus" style="cursor: pointer; margin-right: 3px;" ng-click="addDespesaInternacionalDoProdutoModal(itemEstudo)"></i>
+            <a href="#"><img style="width: 40px;" class="img-circle" ng-src="{{ itemEstudo.img_url }}" alt="Imagem {{ itemEstudo.nome }}"></a>
+            <a ng-click="produtoViewModal(itemEstudo)">{{ itemEstudo.nome | limitTo: 20 }}</a>
+            <br/>
+            <div data-ng-repeat="desp in itemEstudo.estudo_do_produto.despesas.internacionais.individualizadas">
+                <small style="display: block;">{{ desp.desc }}: {{ desp.usd | currency: 'usd ' }}</small>
+            </div>
+            <small>{{ itemEstudo.modelo }}</small><br>
+            <!--<small>Cheio USD:{{ itemEstudo.estudo_do_produto.custo_unitario.cheio.usd }}</small><br/>-->
+            <!--<small>Paypal USD: {{ itemEstudo.estudo_do_produto.custo_unitario.paypal.usd }}</small><br/>-->
+            <!--<small>Declarado USD: {{ itemEstudo.estudo_do_produto.custo_unitario.declarado.usd }}</small><br/>-->
+            <!--<small>Desp Int Tot: {{ itemEstudo.estudo_do_produto.despesas.internacionais.totais.usd }}</small>-->
+
+        </td>
+        <td class="project-title">
+            <a>{{itemEstudo.estudo_do_produto.custo_unitario.cheio.usd | currency: 'U$ '}}</a>
+            <br>
+            <small>II:</small><small class="text-info"> {{ ncm.impostos.ii | percentage: 2}}</small>
+            <small>IPI: {{ ncm.impostos.ipi | percentage: 2 }}</small>
+            <small>Pis: {{ ncm.impostos.pis | percentage: 2 }}</small>
+            <small>Cofins: {{ ncm.impostos.cofins | percentage: 2 }}</small>
+        </td>
+        <td class="project-title">
+            <div>
+                <input style="text-align: center; border-bottom: 1px solid dimgray;" type="number" class="form-control input-transparente text-center" placeholder="" name="custo_paypal" ng-model="itemEstudo.estudo_do_produto.custo_unitario.paypal.usd" ng-change="processaMudancas(itemEstudo, 'custo_paypal')">
+                <small style="display: block; text-align: center;">paypal</small>
+            </div>
+        </td>
+        <td class="project-title">
+            <input type="text" class="form-control input-transparente text-center" placeholder="" name="custo_dentro" ng-model="itemEstudo.estudo_do_produto.custo_unitario.declarado.usd" ng-change="processaMudancas(itemEstudo, 'custo_dentro')">
+        </td>
+        <td class="project-title">
+            <input style="text-align: center;" type="number" class="form-control input-transparente" placeholder="qtd" data-ng-model="itemEstudo.estudo_do_produto.qtd" ng-change="processaMudancas(itemEstudo, 'qtd')">
+        </td>
+        <td class="project-title">
+            <span data-ng-bind="itemEstudo.estudo_do_produto.resultados.precos.custo.final.brl | currency: 'R$ '"></span>
+        </td>
+        <td class="project-title">
+            <input style="text-align: center;" type="text" class="form-control input-transparente" placeholder="P.Venda (R$)" data-ng-model="itemEstudo.estudo_do_produto.resultados.precos.venda.brl" ng-change="iniImport()">
+        </td>
+        <td class="project-title">
+            <i data-toggle="tooltip" data-placement="right" title="Remover produto"  ng-click="removeProdutoEstudo(itemEstudo)" class="fa fa-times clickable"></i>
+        </td>
+    </tr>
+
+    </tbody>
+</table>

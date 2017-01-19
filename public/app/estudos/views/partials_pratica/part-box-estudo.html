@@ -1,0 +1,77 @@
+<table class="table table-striped small m-t-sm" data-show-toggle="false" id="tblDadosEstudo">
+    <!--<table class="table table-striped">-->
+    <thead>
+    <tr>
+        <th>Principal</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Lucro Operação</td>
+        <td data-ng-bind="estudo.resultados.lucro.final.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Investimento</td>
+        <td data-ng-bind="estudo.resultados.investimento.final.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Invest. Integral</td>
+        <td data-ng-bind="estudo.resultados.investimento.cheio.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Fob</td>
+        <td data-ng-bind="estudo.fob.declarado.usd | currency: 'U$ '"></td>
+    </tr>
+    <tr>
+        <td>CIF</td>
+        <td data-ng-bind="estudo.cif.declarado.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Peso Total:</td>
+        <td data-ng-bind="estudo.medidas.peso.ocupado"></td>
+    </tr>
+    <tr>
+        <td>AFRMM</td>
+        <td data-ng-bind="estudo.despesas.afrmm.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Despesas</td>
+        <td data-ng-bind="estudo.despesas.total.brl | currency: 'R$ '"></td>
+    </tr>
+    </tbody>
+</table>
+<table class="table table-striped small m-t-sm">
+    <thead>
+    <tr>
+        <th>Impostos</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>II</td>
+        <td data-ng-bind="estudo.tributos.declarado.ii.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>IPI</td>
+        <td data-ng-bind="estudo.tributos.declarado.ipi.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>PIS</td>
+        <td data-ng-bind="estudo.tributos.declarado.pis.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Cofins</td>
+        <td data-ng-bind="estudo.tributos.declarado.cofins.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>ICMS</td>
+        <td data-ng-bind="estudo.tributos.declarado.icms.brl | currency: 'R$ '"></td>
+    </tr>
+    <tr>
+        <td>Total Imp.</td>
+        <td data-ng-bind="estudo.tributos.declarado.total.brl | currency: 'R$ '"></td>
+    </tr>
+    </tbody>
+</table>
